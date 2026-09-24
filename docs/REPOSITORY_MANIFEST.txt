@@ -1,0 +1,39 @@
+ShopSphere repository manifest
+
+SOURCE
+  sql/source_schema.sql
+  sql/test_data.sql
+  sql/validation.sql
+
+ADF
+  pipelines/PL_INITIAL_MYSQL_TO_ADLS.json
+  pipelines/PL_METADATA_INCREMENTAL_MYSQL_TO_ADLS.json
+  datasets/DS_MYSQL_DYNAMIC.json
+  datasets/DS_ADLS_INITIAL.json
+  datasets/DS_ADLS_INCREMENTAL.json
+  datasets/DS_ADLS_WATERMARK.json
+  linked-services/LS_MYSQL_SHOPSPHERE.json
+  linked-services/LS_ADLS_SHOPSPHERE.json
+
+DATABRICKS
+  bronze/*.py
+  silver/*.py
+  gold/JOB_17_Gold_Incremental.py
+  control/pipeline_control.sql
+
+AIRFLOW
+  airflow/dags/shopsphere_pipeline.py
+
+SNOWFLAKE
+  databases/SHOPSPHERE_DW.sql
+  schemas/*.sql
+  stages/*.sql
+  file_formats/*.sql
+  tables/*.sql
+  sql/*.sql
+
+DOCS
+  architecture/*.md
+  architecture/*.mmd
+  screenshots/*.png
+  interview-notes/*.md

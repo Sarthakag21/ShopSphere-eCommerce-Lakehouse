@@ -1,0 +1,4 @@
+apache-airflow==3.3.2
+apache-airflow-providers-microsoft-azure>=15.1,<16
+apache-airflow-providers-databricks>=7.20,<8
+apache-airflow-providers-snowflake>=6,<7

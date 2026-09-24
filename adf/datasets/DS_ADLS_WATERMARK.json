@@ -1,0 +1,14 @@
+{
+  "name": "DS_ADLS_WATERMARK",
+  "type": "Microsoft.DataFactory/factories/datasets",
+  "export_type": "sanitized_project_definition",
+  "parameters": {
+    "p_watermark_file": { "type": "string" }
+  },
+  "properties": {
+    "linkedServiceName": "LS_ADLS_SHOPSPHERE",
+    "type": "Json",
+    "container": "shopsphere",
+    "path_pattern": "control/watermark/@{dataset().p_watermark_file}"
+  }
+}

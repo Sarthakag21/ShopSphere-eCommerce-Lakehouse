@@ -1,0 +1,13 @@
+{
+  "name": "DS_MYSQL_DYNAMIC",
+  "type": "Microsoft.DataFactory/factories/datasets",
+  "export_type": "sanitized_project_definition",
+  "parameters": {
+    "p_table": { "type": "string" }
+  },
+  "properties": {
+    "linkedServiceName": "LS_MYSQL_SHOPSPHERE",
+    "type": "MySql",
+    "parameters": ["p_table"]
+  }
+}

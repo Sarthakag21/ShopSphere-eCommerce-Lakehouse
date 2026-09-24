@@ -1,0 +1,23 @@
+CREATE TABLE IF NOT EXISTS SHOPSPHERE_DW.ANALYTICS.FACT_SALES (
+    "order_id"            VARCHAR,
+    "order_date"          TIMESTAMP_NTZ,
+    "order_status"        VARCHAR,
+    "customer_id"         NUMBER,
+    "customer_name"       VARCHAR,
+    "city"                VARCHAR,
+    "state"               VARCHAR,
+    "country"             VARCHAR,
+    "product_id"          VARCHAR,
+    "product_name"        VARCHAR,
+    "category"            VARCHAR,
+    "unit_price"          NUMBER(12,2),
+    "quantity"            NUMBER(38,0),
+    "gross_revenue"       NUMBER(24,2),
+    "total_paid"          NUMBER(22,2),
+    "latest_payment_ts"   TIMESTAMP_NTZ,
+    "shipment_status"     VARCHAR,
+    "shipment_carrier"    VARCHAR,
+    "latest_shipment_ts"  TIMESTAMP_NTZ,
+    "updated_at"          TIMESTAMP_NTZ,
+    "_ingested_at"        TIMESTAMP_NTZ
+);

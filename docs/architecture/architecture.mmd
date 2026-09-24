@@ -1,0 +1,13 @@
+flowchart LR
+    M[(MySQL<br/>SHOPSPHERE_SOURCE)] --> A[Azure Data Factory<br/>Metadata-driven Incremental]
+    A --> L[(ADLS Gen2<br/>landing/)]
+    L --> B[Databricks Bronze<br/>Auto Loader + Delta]
+    B --> S[Databricks Silver<br/>DQ + Dedup + SCD2 + RI]
+    S --> G[Databricks Gold<br/>fact_sales]
+    G --> E[(ADLS Gen2<br/>gold/serving/*.parquet)]
+    E --> C[Snowflake COPY INTO<br/>STAGING]
+    C --> F[(SNOWFLAKE<br/>ANALYTICS.FACT_SALES)]
+    AF[Apache Airflow] -.-> A
+    AF -.-> DJ[Databricks Job]
+    AF -.-> F
+    AF -.-> PC[(SHOPSPHERE.gold.pipeline_control)]

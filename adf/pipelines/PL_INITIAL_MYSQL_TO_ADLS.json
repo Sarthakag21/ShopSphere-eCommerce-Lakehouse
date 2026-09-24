@@ -1,0 +1,40 @@
+{
+  "name": "PL_INITIAL_MYSQL_TO_ADLS",
+  "type": "Microsoft.DataFactory/factories/pipelines",
+  "export_type": "sanitized_project_definition",
+  "properties": {
+    "activities": [
+      {
+        "name": "Lookup_Source_Metadata",
+        "type": "Lookup",
+        "description": "Reads active source-table metadata for the initial load."
+      },
+      {
+        "name": "ForEach_Tables",
+        "type": "ForEach",
+        "description": "Loops through active source tables."
+      },
+      {
+        "name": "Copy_Initial",
+        "type": "Copy",
+        "source": "MySQL",
+        "sink": "ADLS Gen2",
+        "mode": "initial/full"
+      },
+      {
+        "name": "Lookup_New_Watermark",
+        "type": "Lookup",
+        "description": "Gets the maximum source watermark after a successful copy."
+      },
+      {
+        "name": "Copy_Watermark",
+        "type": "Copy",
+        "description": "Writes the table-specific watermark metadata to ADLS control storage."
+      }
+    ],
+    "notes": [
+      "The actual project used a separate initial-load path so the initial Bronze overwrite was a one-time operation.",
+      "Credentials and workspace IDs are intentionally omitted."
+    ]
+  }
+}

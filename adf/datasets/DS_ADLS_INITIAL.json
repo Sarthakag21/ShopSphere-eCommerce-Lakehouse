@@ -1,0 +1,15 @@
+{
+  "name": "DS_ADLS_INITIAL",
+  "type": "Microsoft.DataFactory/factories/datasets",
+  "export_type": "sanitized_project_definition",
+  "parameters": {
+    "p_target_path": { "type": "string" },
+    "p_file_name": { "type": "string" }
+  },
+  "properties": {
+    "linkedServiceName": "LS_ADLS_SHOPSPHERE",
+    "type": "DelimitedText",
+    "container": "shopsphere",
+    "parameters": ["p_target_path", "p_file_name"]
+  }
+}

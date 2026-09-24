@@ -1,0 +1,36 @@
+{
+  "name": "PL_METADATA_INCREMENTAL_MYSQL_TO_ADLS",
+  "type": "Microsoft.DataFactory/factories/pipelines",
+  "export_type": "sanitized_project_definition",
+  "properties": {
+    "activities": [
+      { "name": "Lookup_Source_Metadata", "type": "Lookup" },
+      {
+        "name": "ForEach_Tables",
+        "type": "ForEach",
+        "items_expression": "@activity('Lookup_Source_Metadata').output.value"
+      },
+      {
+        "name": "Lookup_Watermark",
+        "type": "Lookup",
+        "description": "Reads the previously successful watermark from ADLS control JSON."
+      },
+      {
+        "name": "Copy_Incremental",
+        "type": "Copy",
+        "source_query_pattern": "@concat('SELECT * FROM ', item().source_table, ' WHERE ', item().watermark_column, ' > '''', activity('Lookup_Watermark').output.firstRow.watermark, '''' AND ', item().watermark_column, ' <= NOW()')",
+        "sink_file_name_pattern": "@concat(item().source_table, '_', formatDateTime(utcnow(),'yyyyMMddHHmmss'), '.csv')"
+      },
+      {
+        "name": "Lookup_New_Watermark",
+        "type": "Lookup",
+        "description": "Runs only after Copy_Incremental succeeds."
+      },
+      {
+        "name": "Copy_Watermark",
+        "type": "Copy",
+        "description": "Stores the new watermark in ADLS control/watermark/."
+      }
+    ]
+  }
+}

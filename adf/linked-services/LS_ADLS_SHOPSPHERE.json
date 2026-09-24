@@ -1,0 +1,11 @@
+{
+  "name": "LS_ADLS_SHOPSPHERE",
+  "type": "Microsoft.DataFactory/factories/linkedservices",
+  "export_type": "sanitized_project_definition",
+  "properties": {
+    "type": "AzureBlobFS",
+    "storage_account": "adlsgen2shopsphere",
+    "authentication": "managed_identity_or_workspace_identity",
+    "container": "shopsphere"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "LS_MYSQL_SHOPSPHERE",
+  "type": "Microsoft.DataFactory/factories/linkedservices",
+  "export_type": "sanitized_project_definition",
+  "properties": {
+    "type": "MySql",
+    "integrationRuntime": "SHIR-ShopSphere",
+    "connection": {
+      "host": "<MYSQL_HOST>",
+      "database": "SHOPSPHERE_SOURCE",
+      "username": "<SECRET>",
+      "password": "<SECRET>"
+    }
+  }
+}

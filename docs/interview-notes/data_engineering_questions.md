@@ -1,0 +1,23 @@
+# Data Engineering Interview Checklist
+
+- ETL vs ELT
+- Incremental load vs full load
+- Watermarks
+- Metadata-driven pipelines
+- Auto Loader
+- Delta Lake vs Parquet
+- Bronze/Silver/Gold
+- Deduplication
+- SCD Type 1 vs Type 2
+- Referential integrity
+- Data quality/quarantine
+- MERGE / upsert
+- Repartition vs coalesce
+- Data skew / salting
+- Predicate pushdown / partition pruning
+- AQE / broadcast joins
+- Airflow DAG dependencies / retries / deferrable tasks
+- Snowflake stages / file formats / COPY INTO / MERGE
+- Unity Catalog permissions
+- Service principals
+- Cost optimization

@@ -1,0 +1,43 @@
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# Airflow local state / secrets
+airflow_home/
+airflow.db
+logs/
+simple_auth_manager_passwords.json.generated
+
+# Databricks / Spark checkpoints and local state
+**/checkpoints/
+.sparkStaging/
+
+# Azure / cloud secrets
+*.pem
+*.key
+*.pfx
+*.crt
+*.cer
+*secret*
+*credentials*
+
+# Snowflake local profiles
+connections.toml
+config.toml
+
+# Large/generated data
+*.parquet
+*.delta
+
+# Local exports that may contain secrets
+adf/linked-services/*secret*
+adf/linked-services/*credential*
