@@ -2,7 +2,13 @@
 
 These screenshots are evidence captured during the working project build.
 
-- `databricks_incremental_job_graph.png` — Databricks Bronze/Silver/Gold job graph.
-- `snowflake_staging_verification.png` — Snowflake Parquet staging verification.
-- `snowflake_merge_and_fact_sales_validation.png` — COPY + MERGE and FACT_SALES verification.
-- `final_watermark_and_snowflake_validation.png` — successful pipeline-control watermarks and Snowflake row check.
+- `1-shopsphere-end-to-end-architecture.png` — Architecture of Shopsphere Project.
+- `2-adf-metadata-pipeline.png` — Data Ingestion with Azure Data Factory.
+- `3-adf-successful-run.png` — ADF Monitor
+- `4-databricks-medallion.png` — Databricks Lakehouse.
+- `5-databricks-job-dag.png` — Databricks Job Orchestration
+- `6-scd2-example.png` — SCD Type 2
+- `7-gold-incremental-update.png` — Incremental Gold Processing
+- `8-snowflake-objects.png` — Snowflake Serving Layer
+- `9-snowflake-fact-sales.png` — Snowflake Analytics
+- `10-airflow-successful-run.png` — Airflow Orchestration
